@@ -17,6 +17,9 @@ const partialPath = path.join(__dirname, '../templates/partials');
 
 const app = express();
 
+// Get Port number from the environment
+const port = process.env.PORT || 3000;
+
 // Set the hbs -> dynamic template plugin for express.
 // Look up npm hbs from google
 app.set('view engine', 'hbs');
@@ -126,7 +129,6 @@ app.get('*', (req, resp) => {
 });
 
 // Run the server on port 3000
-const port = 3000;
 app.listen(port, () => {
     console.log('Server is up on port ' + port);
 });

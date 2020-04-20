@@ -3,7 +3,8 @@ console.log('Client side javascript file is loaded');
 // Get weather forecast.
 // The result will be put into a callback function.
 const getWeatherForecast = (location, callback) => {
-    fetch('http://localhost:3000/weather?address=' + location).then((response) => {
+    // Use the relative instead of http://localhost:3000/weather?address=
+    fetch('/weather?address=' + location).then((response) => {
         response.json().then((data) => {
             if (data.error) {
                 callback(data.error, undefined);
