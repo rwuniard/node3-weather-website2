@@ -23,21 +23,24 @@ const searchElement = document.querySelector('input');
 const messageOne = document.querySelector('#message-one');
 const messageWeather = document.querySelector('#message-weather');
 const messageDescription = document.querySelector('#message-description');
+const messageHumidity = document.querySelector('#message-humidity');
 
 // Add the submit event listener from the form.
 weatherForm.addEventListener('submit', (event) => {
     event.preventDefault();
     const location = searchElement.value;
-    getWeatherForecast(location, (error, { city, weather, description } = {}) => {
+    getWeatherForecast(location, (error, { city, weather, description, humidity } = {}) => {
         if (error) {
             console.log(error);
             messageOne.textContent = error;
             messageWeather.textContent = '';
             messageDescription.textContent = '';
+            messageHumidity.textContent = '';
         } else {
             messageOne.textContent = city;
             messageWeather.textContent = weather;
             messageDescription.textContent = description;
+            messageHumidity.textContent = humidity;
             console.log(city);
             console.log(weather);
             console.log(description);
