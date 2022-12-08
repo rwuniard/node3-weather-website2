@@ -23,7 +23,7 @@
     },
     "homepage": "https://github.com/rwuniard/nodejs_udemy_andrew_mead#readme",
     "dependencies": {
-        "express": "^4.17.1",
+        "express": "^4.17.3",
         "hbs": "^4.1.1",
         "newrelic": "^6.8.0",
         "request": "^2.88.2"
